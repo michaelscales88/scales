@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1f5284-2c14-4288-8bcf-1764bf642129" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/terminal.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/backend.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/server.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/tasks/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/tasks/api.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/tasks/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/tasks/serializer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/default_config.py" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-    </list>
+    <list default="true" id="2c1f5284-2c14-4288-8bcf-1764bf642129" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
