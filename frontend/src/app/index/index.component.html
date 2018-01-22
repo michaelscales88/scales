@@ -1,0 +1,26 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td>{{ task.id }}</td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+        </tr>
+        <tr *ngIf="task?.length == 0">
+            <td colspan="3" class="no-data-available">No data!</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </tfoot>
+</table>

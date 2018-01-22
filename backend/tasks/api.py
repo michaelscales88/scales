@@ -1,5 +1,5 @@
+from flask import jsonify
 from flask_restful import Resource
-
 
 from .models import Task
 from .serializer import TaskSchema
@@ -13,6 +13,13 @@ class TaskListAPI(Resource):
 
     def get(self):
         return self.schema.jsonify(Task.all())
+
+    def put(self):
+        print("hitting TaskListAPI PUT")
+        print(self.schema.jsonify(Task.all()))
+        return jsonify(
+            data=self.schema.dump(Task.all())
+        )
 
 
 class TaskAPI(Resource):

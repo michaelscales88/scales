@@ -1,5 +1,6 @@
 # app/server.py
 from flask import Flask
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from sqlalchemy.ext.declarative import declarative_base
@@ -20,7 +21,7 @@ app = Flask(
     instance_path='/tmp'
 )
 app.config.from_object('backend.default_config.Config')
-
+CORS(app)
 
 db = SQLAlchemy(app, model_class=BaseModel)
 ma = Marshmallow(app)
