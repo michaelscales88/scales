@@ -1,4 +1,4 @@
-from app import ma
+from backend import ma
 from .models import Task
 
 

@@ -19,7 +19,7 @@ app = Flask(
     instance_relative_config=True,
     instance_path='/tmp'
 )
-app.config.from_object('tmp.default_config.Config')
+app.config.from_object('backend.default_config.Config')
 
 
 db = SQLAlchemy(app, model_class=BaseModel)
@@ -28,5 +28,5 @@ ma = Marshmallow(app)
 
 def init_db():
     # Create database and tables
-    from app.tasks.models import Task
+    from backend.tasks.models import Task
     db.create_all()

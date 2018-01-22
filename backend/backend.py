@@ -7,7 +7,7 @@ api_bp = Blueprint('backend', __name__)
 api = Api(api_bp)
 
 
-from app.tasks import TaskListAPI, TaskAPI
+from backend.tasks import TaskListAPI, TaskAPI
 
 
 # Register the endpoint to the api
