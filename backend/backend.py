@@ -11,6 +11,6 @@ from backend.tasks import TaskListAPI, TaskAPI
 
 
 # Register the endpoint to the api
-api.add_resource(TaskListAPI, '/get-tasks')
-api.add_resource(TaskAPI, '/get-task/<int:id>')
+api.add_resource(TaskListAPI, "/get-tasks")
+api.add_resource(TaskAPI, "/task")
 

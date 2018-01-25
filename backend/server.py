@@ -6,7 +6,6 @@ from flask_marshmallow import Marshmallow
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_mixins import AllFeaturesMixin
 
-
 Base = declarative_base()
 
 

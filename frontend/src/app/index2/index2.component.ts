@@ -1,15 +1,14 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs/Subject';
 
-
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-index2',
+  templateUrl: './index2.component.html',
+  styleUrls: ['./index2.component.css']
 })
-export class IndexComponent implements OnInit {
+export class Index2Component implements OnInit {
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
 
@@ -27,7 +26,7 @@ export class IndexComponent implements OnInit {
       ajax: {
         url: 'http://localhost:8080/get-tasks',
         data: {
-          is_done: false
+          is_done: true
         }
       },
       columns: [{
@@ -43,7 +42,7 @@ export class IndexComponent implements OnInit {
       select: true,
       buttons: [
         {
-          text: 'Complete Selected',
+          text: 'Reactivate Selected',
           action: function () {
             var data = this.rows({ selected: true }).data();
             var push_data = [];
@@ -52,14 +51,11 @@ export class IndexComponent implements OnInit {
                 push_data.push(data[key].id);
               }
             });
-            console.log(push_data);
-            call_api.delete(
+            const headers = new HttpHeaders().set("Content-Type", "application/json");
+            call_api.put(
               'http://localhost:8080/task',
-              {
-                params: {
-                  id_list: JSON.stringify(push_data)
-                }
-              }
+              { id_list: JSON.stringify(push_data) },
+              { headers }
             ).subscribe(results => {
               $("button#refresh-active").click();
               $("button#refresh-inactive").click();
@@ -82,4 +78,5 @@ export class IndexComponent implements OnInit {
       this.dtTrigger.next();
     });
   }
+
 }

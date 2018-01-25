@@ -11,3 +11,7 @@ class TaskSchema(ma.ModelSchema):
 
 def to_bool(val):
     return loads(val)
+
+
+def to_list(val):
+    return loads(val)
