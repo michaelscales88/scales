@@ -16,8 +16,7 @@ export class Index2Component implements OnInit {
 
   dtTrigger: Subject<any> = new Subject();
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     let call_api = this.http;
@@ -25,9 +24,7 @@ export class Index2Component implements OnInit {
       dom: 'Bfrtip',
       ajax: {
         url: 'http://localhost:8080/get-tasks',
-        data: {
-          is_done: true
-        }
+        data: { is_done: true }
       },
       columns: [{
         title: 'ID',
@@ -52,8 +49,7 @@ export class Index2Component implements OnInit {
               }
             });
             const headers = new HttpHeaders().set("Content-Type", "application/json");
-            call_api.put(
-              'http://localhost:8080/task',
+            call_api.put('http://localhost:8080/task',
               { id_list: JSON.stringify(push_data) },
               { headers }
             ).subscribe(results => {
@@ -66,9 +62,7 @@ export class Index2Component implements OnInit {
     };
   }
 
-  ngAfterViewInit(): void {
-    this.dtTrigger.next();
-  }
+  ngAfterViewInit(): void { this.dtTrigger.next(); }
 
   rerender(): void {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
@@ -78,5 +72,4 @@ export class Index2Component implements OnInit {
       this.dtTrigger.next();
     });
   }
-
 }
