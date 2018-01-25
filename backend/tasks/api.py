@@ -45,7 +45,8 @@ class TaskAPI(Resource):
                 if task:
                     task.update(done=False)
         else:
-            Task.create(**self.args['task'])
+            if self.args['task']:
+                Task.create(**self.args['task'])
 
     def delete(self):
         if self.args['id_list']:
